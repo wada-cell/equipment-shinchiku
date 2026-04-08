@@ -1,5 +1,5 @@
 const CHATWORK_API_TOKEN = process.env.CHATWORK_API_TOKEN ?? "066590a096c512b1abaadfdbdf7df46d";
-const CHATWORK_ROOM_ID = process.env.CHATWORK_ROOM_ID ?? "432668298";
+const CHATWORK_ROOM_ID = process.env.CHATWORK_ROOM_ID ?? "432973588";
 
 export async function sendChatworkMessage(message: string) {
   try {
