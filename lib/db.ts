@@ -2,7 +2,7 @@ import Database from "better-sqlite3";
 import path from "path";
 import fs from "fs";
 
-const DB_DIR = path.join(process.cwd(), "data");
+const DB_DIR = process.env.NODE_ENV === "production" ? "/tmp" : path.join(process.cwd(), "data");
 const DB_PATH = path.join(DB_DIR, "equipment.db");
 
 let db: Database.Database;
@@ -14,6 +14,7 @@ export function getDb(): Database.Database {
   db.pragma("journal_mode = WAL");
   db.pragma("foreign_keys = ON");
   initSchema();
+  autoSeed();
   return db;
 }
 
@@ -102,6 +103,40 @@ function initSchema() {
       created_at TEXT NOT NULL DEFAULT (datetime('now','localtime'))
     );
   `);
+}
+
+function autoSeed() {
+  const existing = db.prepare("SELECT COUNT(*) AS cnt FROM users").get() as any;
+  if (existing.cnt > 0) return;
+
+  // bcryptの同期版がないので、固定ハッシュを使用（kaede2024のbcryptハッシュ）
+  const bcryptHash = "$2a$10$nWg3tBJBRLyorP7L1YfhyO7GuPbFvgGkcBpA6X/JIa94zav2tBqtC";
+
+  db.prepare(
+    "INSERT INTO users (name, email, password_hash, role) VALUES (?, ?, ?, ?)"
+  ).run("管理者", "admin@kaede-koumuten.jp", bcryptHash, "admin");
+
+  // カテゴリ
+  db.prepare(
+    "INSERT INTO categories (name, slug, type, icon, sort_order) VALUES (?, ?, ?, ?, ?)"
+  ).run("新築備品", "shinchiku", "slot", "", 1);
+
+  const shinchiku = db.prepare("SELECT id FROM categories WHERE slug = 'shinchiku'").get() as any;
+  const catId = shinchiku.id;
+
+  const ins = db.prepare(
+    "INSERT INTO equipment (category_id, name, item_number, storage_location, return_note, memo) VALUES (?, ?, ?, ?, ?, ?)"
+  );
+
+  ins.run(catId, "中間検査一式", "1", null, null, null);
+  ins.run(catId, "中間検査一式", "2", null, null, null);
+  ins.run(catId, "レベル一式", "1", null, null, null);
+  ins.run(catId, "レベル一式", "2", null, null, null);
+  ins.run(catId, "サーモグラフィ", null, null, null, null);
+  ins.run(catId, "ホルム測定", "1", null, null, null);
+  ins.run(catId, "ホルム測定", "2", null, null, null);
+  ins.run(catId, "ライト", "1", null, null, null);
+  ins.run(catId, "ライト", "2", null, null, null);
 }
 
 export default getDb;
