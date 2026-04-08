@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>備品管理アプリ 操作マニュアル | 楓工務店 リノベ事業部</title>
+<style>
+  @page { size: A4; margin: 20mm; }
+  @media print { .no-print { display: none; } body { font-size: 11pt; } }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif; color: #1a1a1a; line-height: 1.7; padding: 24px; max-width: 800px; margin: 0 auto; }
+  .print-btn { position: fixed; top: 16px; right: 16px; background: #000; color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px; }
+  .print-btn:hover { background: #333; }
+  h1 { font-size: 22pt; font-weight: 900; border-bottom: 3px solid #000; padding-bottom: 12px; margin-bottom: 8px; }
+  .subtitle { font-size: 11pt; color: #666; margin-bottom: 32px; }
+  h2 { font-size: 15pt; font-weight: 900; margin-top: 32px; margin-bottom: 12px; padding: 8px 12px; background: #f5f5f5; border-left: 4px solid #000; }
+  h3 { font-size: 12pt; font-weight: 700; margin-top: 20px; margin-bottom: 8px; }
+  ol, ul { padding-left: 24px; margin-bottom: 12px; }
+  li { margin-bottom: 6px; }
+  .note { background: #f9f9f9; border: 2px solid #ddd; border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 10pt; }
+  .note strong { display: block; margin-bottom: 4px; }
+  .info-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  .info-table th, .info-table td { border: 2px solid #000; padding: 8px 12px; text-align: left; font-size: 10pt; }
+  .info-table th { background: #f5f5f5; font-weight: 700; width: 30%; }
+  .section { page-break-inside: avoid; }
+  .page-break { page-break-before: always; }
+  .logo-area { text-align: center; margin-bottom: 24px; }
+  .logo-area img { height: 48px; }
+  .toc { margin: 24px 0; }
+  .toc li { margin-bottom: 4px; list-style: none; }
+  .toc li::before { content: "─ "; color: #999; }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">PDF保存 / 印刷</button>
+
+<div class="logo-area">
+  <img src="/logo.jpg" alt="楓リフォーム">
+</div>
+
+<h1>備品管理アプリ 操作マニュアル</h1>
+<p class="subtitle">楓工務店 リノベ事業部 ｜ 2026年4月</p>
+
+<h3>目次</h3>
+<ul class="toc">
+  <li>1. ログイン方法</li>
+  <li>2. パスワードを変更する</li>
+  <li>3. ホーム画面の見方</li>
+  <li>4. 備品を借りる</li>
+  <li>5. 備品を返却する</li>
+  <li>6. 使用リクエストを送る</li>
+  <li>7. 通知を確認する</li>
+  <li>8. 【管理者】備品を追加・削除する</li>
+  <li>9. 【管理者】スタッフを登録する</li>
+  <li>10. よくある質問</li>
+</ul>
+
+<!-- ===== 1 ===== -->
+<div class="section">
+<h2>1. ログイン方法</h2>
+<ol>
+  <li>スマートフォンのブラウザ（Chrome, Safari等）でアプリのURLを開く</li>
+  <li>管理者から発行された<strong>メールアドレス</strong>と<strong>パスワード</strong>を入力</li>
+  <li>「ログイン」ボタンをタップ</li>
+</ol>
+
+<div class="note">
+  <strong>NOTE</strong>
+  パスワードを忘れた場合は管理者に連絡してリセットしてもらってください。
+  ブックマーク（お気に入り）やホーム画面に追加しておくと、次回から簡単にアクセスできます。
+</div>
+</div>
+
+<!-- ===== 2 ===== -->
+<div class="section">
+<h2>2. パスワードを変更する</h2>
+<ol>
+  <li>画面下の<strong>「マイページ」</strong>タブをタップ</li>
+  <li><strong>「パスワードを変更する」</strong>をタップ</li>
+  <li>現在のパスワードと新しいパスワード（4文字以上）を入力</li>
+  <li>「変更する」をタップして完了</li>
+</ol>
+
+<div class="note">
+  <strong>NOTE</strong>
+  セキュリティのため、初回ログイン後にパスワードを変更することをおすすめします。
+</div>
+</div>
+
+<!-- ===== 3 ===== -->
+<div class="section">
+<h2>3. ホーム画面の見方</h2>
+<table class="info-table">
+  <tr><th>カテゴリ選択</th><td>「着工備品」と「現調セット・その他備品」の2つから選びます</td></tr>
+  <tr><th>期限超過アラート</th><td>返却期限を過ぎた備品がある場合、画面上部に表示されます</td></tr>
+  <tr><th>貸出状況</th><td>現在貸出中の備品が一覧で表示されます</td></tr>
+</table>
+</div>
+
+<!-- ===== 3 ===== -->
+<div class="section">
+<h2>4. 備品を借りる</h2>
+<ol>
+  <li>ホーム画面でカテゴリを選択</li>
+  <li>借りたい備品をタップ（キーボックス等は中に入って番号を選ぶ）</li>
+  <li>備品詳細画面で<strong>「貸出申請する」</strong>をタップ</li>
+  <li>以下の項目を入力する：
+    <ul>
+      <li>使用現場・お客様名</li>
+      <li>持ち出し日</li>
+      <li>持ち出し時間（1時間刻みのボタン or 直接入力）</li>
+      <li>返却予定日</li>
+      <li>返却予定時間</li>
+      <li>使用目的</li>
+    </ul>
+  </li>
+  <li>「貸出申請する」で完了</li>
+</ol>
+
+<div class="note">
+  <strong>NOTE</strong>
+  「使用中」と表示されている備品は、他の人が借りています。リクエスト機能（5章）で交渉できます。
+</div>
+</div>
+
+<!-- ===== 4 ===== -->
+<div class="section">
+<h2>5. 備品を返却する</h2>
+<ol>
+  <li>ホーム画面の貸出状況、またはマイページから借りている備品をタップ</li>
+  <li>備品詳細画面で<strong>「返却する」</strong>をタップ</li>
+  <li>確認画面で「OK」を押して完了</li>
+</ol>
+
+<div class="note">
+  <strong>注意事項のある備品</strong>
+  <ul>
+    <li>キーボックス → ナンバーを「0000」に戻してから返却</li>
+    <li>一眼レフカメラ → SDカードの中身を空にしてから返却</li>
+  </ul>
+  ※ 備品詳細画面に返却注意事項が赤字で表示されます。必ず確認してください。
+</div>
+</div>
+
+<!-- ===== 5 ===== -->
+<div class="section">
+<h2>6. 使用リクエストを送る</h2>
+<ol>
+  <li>使用中の備品の詳細画面を開く</li>
+  <li><strong>「使用リクエストを送る」</strong>をタップ</li>
+  <li>使いたい日時とメッセージを入力して送信</li>
+</ol>
+<p>現在借りている人に通知が届きます。直接連絡を取り合って、返却タイミングを調整してください。</p>
+</div>
+
+<div class="section">
+<h2>6.5 備品を予約する</h2>
+<ol>
+  <li>備品の詳細画面を開く</li>
+  <li>「予約」セクションの<strong>「＋ 予約する」</strong>をタップ</li>
+  <li>開始日時・終了日時・現場名・使用目的を入力</li>
+  <li>「予約する」をタップして完了</li>
+</ol>
+<div class="note">
+  <strong>NOTE</strong>
+  同じ期間に別の予約や貸出がある場合はエラーになります。予約のキャンセルは予約一覧の「取消」から行えます。
+</div>
+</div>
+
+<div class="section">
+<h2>6.6 貸出カレンダーを見る</h2>
+<ol>
+  <li>ホーム画面の<strong>「貸出カレンダー」</strong>をタップ</li>
+  <li>「＜」「＞」で月を切り替え</li>
+  <li>日付をタップすると、その日の貸出一覧が表示されます</li>
+</ol>
+<div class="note">
+  <strong>NOTE</strong>
+  黒い点がある日は貸出中の備品があります。スプレッドシートの月表示の代わりに活用してください。
+</div>
+</div>
+
+<!-- ===== 7 ===== -->
+<div class="section">
+<h2>7. 通知を確認する</h2>
+<ul>
+  <li>画面下の<strong>「通知」</strong>タブをタップ</li>
+  <li>ヘッダー右上のベルアイコンからも確認できます</li>
+  <li>未読の通知がある場合、バッジ（数字）が表示されます</li>
+</ul>
+
+<table class="info-table">
+  <tr><th>返却リマインド</th><td>返却予定時刻が近づくと通知されます</td></tr>
+  <tr><th>使用リクエスト</th><td>他のスタッフからリクエストが届いた場合に通知されます</td></tr>
+</table>
+</div>
+
+<!-- ===== 7 ===== -->
+<div class="section page-break">
+<h2>8. 【管理者】備品を追加・削除する</h2>
+<ol>
+  <li>マイページ →「管理者メニュー」→「備品の追加・編集」</li>
+  <li>「＋ 備品を追加」をタップ</li>
+  <li>以下を入力する：
+    <ul>
+      <li><strong>カテゴリ</strong>（着工備品 / 現調セット等）</li>
+      <li><strong>備品名</strong>（例：キーボックス）</li>
+      <li><strong>番号</strong>（例：No.10）※ 同じ名前+番号違いは自動でグループ化</li>
+      <li>保管場所（例：イナバ倉庫）</li>
+      <li>返却時の注意（例：ナンバーを0000に戻す）</li>
+      <li>メモ（自由入力）</li>
+    </ul>
+  </li>
+  <li>「追加する」で完了</li>
+</ol>
+<p>削除する場合は、備品一覧の各備品の横にある「削除」をタップしてください。</p>
+</div>
+
+<!-- ===== 8 ===== -->
+<div class="section">
+<h2>9. 【管理者】スタッフを登録する</h2>
+<ol>
+  <li>マイページ →「管理者メニュー」→「ユーザー管理」</li>
+  <li>「＋ スタッフを追加」をタップ</li>
+  <li>名前・メールアドレス・初期パスワード・権限（スタッフ/管理者）・部署を入力</li>
+  <li>「追加する」で完了</li>
+</ol>
+<p>登録後、メールアドレスとパスワードをスタッフに伝えてください。</p>
+</div>
+
+<!-- ===== 9 ===== -->
+<div class="section">
+<h2>10. よくある質問</h2>
+<table class="info-table">
+  <tr><th>Q. パスワードを忘れた</th><td>管理者に連絡してリセットしてもらってください</td></tr>
+  <tr><th>Q. パスワードを変更したい</th><td>マイページ →「パスワードを変更する」から変更できます</td></tr>
+  <tr><th>Q. 借りたい備品が使用中</th><td>「使用リクエスト」を送って、借りている人と交渉してください</td></tr>
+  <tr><th>Q. 新しい備品を追加したい</th><td>管理者メニューの「備品の追加・編集」から追加できます</td></tr>
+  <tr><th>Q. カテゴリを増やしたい</th><td>管理者メニューの「カテゴリ管理」から追加できます</td></tr>
+  <tr><th>Q. ログアウトしたい</th><td>マイページの一番下に「ログアウト」ボタンがあります</td></tr>
+</table>
+</div>
+
+<div style="margin-top: 48px; padding-top: 16px; border-top: 2px solid #000; text-align: center; font-size: 10pt; color: #999;">
+  楓工務店 リノベ事業部 ｜ 備品管理アプリ操作マニュアル ｜ 2026年4月
+</div>
+
+</body>
+</html>
